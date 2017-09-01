@@ -1,0 +1,15 @@
+<h1>Server Info</h1>
+<ol>
+    <span> ▶ </span>
+    <h3>
+        <% for key,val in pairs(server_info) do %>
+            <% for k,v in pairs(val) do %>
+                <p><%= k .. ":" .. v %></p>
+            <% end %>
+        <% end %>
+
+        <div class="Kick">
+	        <a href="<%="/" %>"> <%=  "回到主页" %></a>
+	    </div>
+    </h3>
+</ol>

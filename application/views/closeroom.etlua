@@ -1,0 +1,24 @@
+<h1>Close Room</h1>
+<ol>
+	<h3>
+		<% if type(closeroom) == "table" then %>
+			<% for key, val in pairs(closeroom) do %>
+				<% if key == "ok" and tonumber(val) == 1 then %>
+					<p><%= "status" .. ":" .. "successful" %></p>
+				<% elseif key == "ok" and tonumber(val) == 0 then %>
+					<p><%= "status" .. ":" .. "failed" %></p>
+				<% end %>
+
+				<% if key == "err" and #tostring(val) > 1 then %>
+					<p><%= "msg" .. ":" .. val %></p>
+				<% end %>
+			<% end %>
+		<% else %>
+			<p><%= "msg" .. ":" .. closeroom %></p>
+		<% end %>
+
+		<div class="Room">
+            <a href="<%="/" %>"> <%=  "回到主页" %></a>
+        </div>
+	</h3>
+</ol>

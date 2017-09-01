@@ -1,0 +1,8 @@
+<h1>Online Rooms</h1>
+<ol>
+  <% for i, thing in ipairs(roomData) do %>
+    <div class="user">
+        <a href="<%="checkroom/"..i %>">/<%= i %>/ - <%=  thing.ownerName %></a>
+    </div>
+  <% end %>
+</ol>

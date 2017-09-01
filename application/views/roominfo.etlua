@@ -1,0 +1,26 @@
+<h1>Room Info</h1>
+<ol>
+    <span> ▶ </span>
+    <h3>
+        <% local isLocked = "false" %>
+        <% for key,val in pairs(roomInfo) do %>
+        
+            <% if  key == "locked" and val then %>
+                <% isLocked = "true" %>
+            <% end %>
+
+            <% if  key == "locked" then %>
+                <p><%= "locked:" .. isLocked %></p>
+            <% else %>
+                <p><%= key .. ":" .. val %></p>
+            <% end %>
+
+        <% end %>
+
+        <% if tonumber(roomInfo.roomid) then %>
+            <div class="Room">
+                <a href="<%="/closeroom/"..roomInfo.roomid %>">/<%= roomInfo.roomid %>/ - <%=  "CloseRoom" %></a>
+            </div>
+        <% end %>
+    </h3>
+</ol>

@@ -1,0 +1,15 @@
+<h1>User Info</h1>
+<ol>
+    <span> ▶ </span>
+    <h3>
+        <% for key,val in pairs(userData) do %>
+            <p><%= key .. ":" .. val %></p>
+        <% end %>
+
+        <% if  userData.sid and #tostring(userData.sid) > 10 then %>
+            <div class="user">
+                <a href="<%="/kickoff/"..userData.sid %>">/<%= userData.name %>/ - <%=  "KickOlineUser" %></a>
+            </div>
+        <% end %>
+    </h3>
+</ol>
